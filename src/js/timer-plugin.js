@@ -1,82 +1,90 @@
 import templatesTimer from '../templates/timer-plugin.hbs'
-const refs = {
-    body: document.querySelector('body'),
-    
- 
-}
 
 
-class CountdownTimer {
-    // today = this.dateNow();
-    constructor({selector, targetDate}) {
+
+export default class CountdownTimer {
+    today = this.dateNow();
+    constructor({selector, targetDate, parentSelector}) {
         this.targetDate = targetDate;
+
         this.selector = selector;
+        
         this.days = 0;
         this.hours = 0;
         this.minutes = 0;
-        this.seconds = this.dateNow();
-        this.reference={
-            secs: document.querySelector('[data-value="secs"]'),
-           hour: document.querySelector('[data-value="hours"]'),
-           minute: document.querySelector('[data-value="mins"]'),
-           day: document.querySelector('[data-value="day"]'),
-        }
+        this.seconds = 0;
+        
+        this.reference ={
+            parent: document.querySelector(parentSelector),
+
+        };
         
     }
-
-    dateNow(){
-        let today = new Date();
-        // console.log(today);
-        let seconds = today.getSeconds()
+    
+    renderHtml(){
         
-        // setInterval(this.dateNow, 1000)
-        return seconds;
+        console.log(this)
+        
+        this.reference.parent.insertAdjacentHTML('afterbegin', templatesTimer(this)) ;
+        this.reference.secs = document.querySelector('[data-value="secs"]');
+        this.reference.hour = document.querySelector('[data-value="hours"]');
+        this.reference.minute = document.querySelector('[data-value="mins"]');
+        this.reference.day = document.querySelector('[data-value="days"]');
+        this.reference.timer = document.getElementById(this.selector);
+        console.log(this.reference.timer)
+    
+
+
+        setInterval(this.timerWrithe.bind(this), 1000);
+    }
+    addSomeTime(){
+        this.somTime = this.targetDate - this.dateNow();
+    }
+    dateNow(){
+
+        return new Date();
+    }
+    timerWrithe() {
+        console.log(this.reference.secs.textContent)
+        this.addSomeTime.call(this);
+        this.reference.secs.textContent = this.dateSecondsTimer.call(this);
+        this.reference.minute.textContent = this.dateMinutesTimer.call(this);
+        this.reference.hour.textContent = this.dateHoursTimer.call(this);
+        this.reference.day.textContent = this.dateDayTimer.call(this);
+        // hour.textContent = 
+        // console.log(timerOne.dateNow())
+        //  setInterval(secondWrithe, 2000)
     }
     
     dateDayTimer(){
-        
+        return Math.floor(this.somTime / (1000 * 60 * 60 * 24));
     }
     dateHoursTimer(){
-
+        return Math.floor((this.somTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     }
     dateMinutesTimer(){
-
+        return Math.floor((this.somTime % (1000 * 60 * 60)) / (1000 * 60));;
     }
     dateSecondsTimer(){
-        // console.log(this.targetDate.getSeconds());
-        // console.log(this.today);
-        
-        // console.log(time)
-        // const secs = Math.floor((time % (1000 * 60)) / 1000);
-        // setTimeout(this.dateSecondsTimer,1000)
-    //   return time;
-      
+        return Math.floor((this.somTime % (1000 * 60)) / 1000);
     }
 }
 
-const timerOne = new CountdownTimer({
-    selector: 'timer-1',
-    targetDate: new Date('Jul 17, 2022'),
-  });
+// const timerOne = new CountdownTimer({
+//     selector: 'timer-1',
+//     targetDate: new Date('Jul 17, 2022'),
+//   });
 
-//   templatesTimer(timerOne);
-    console.log(timerOne.selector);
-  console.log(templatesTimer(timerOne));
-  refs.body.innerHTML = templatesTimer(timerOne);
+//* створили розмітку
 
-//   timerOne.dateNow();
-//  const secs =document.getElementById(timerOne.selector);
 
-console.log(timerOne.reference.secs)
 
-// console.log(secs)
-// function secondWrithe() {
-//     secs.textContent = timerOne.dateNow();
-//     // hour.textContent = 
-//     // console.log(timerOne.dateNow())
-//      setInterval(secondWrithe, 1000)
-// }
-// secondWrithe()
+
+
+    // console.log(secs)
+    // console.log(timerOne)
+
+
 
   /*
  * Оставшиеся дни: делим значение UTC на 1000 * 60 * 60 * 24, количество
