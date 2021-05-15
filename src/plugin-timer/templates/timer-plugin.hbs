@@ -1,22 +1,86 @@
 
+    <h1 class="title-timer">{{presentationName}}</h1>
     <div class="timer" id={{selector}}>
         <div class="field">
-          <span class="value" data-value="days">{{days}}</span>
+          <div class="countDown_digit_cont countDown_digit_cont_0">
+ <div class="secs countDown_digit_last_placeholder">
+                        <div class="countDown_digit_last_placeholder_inner" data-value="days">
+                            {{days}}
+                        </div>
+  </div>
+  <div class="countDown_digit_new_placeholder" data-value="days">{{days}}</div>
+  <div class="countDown_digit_last_rotate" data-value="days">{{days}}</div>
+  <div class="countDown_digit_new_rotate" data-value="rotate">
+                        <div class="countDown_digit_new_rotated">
+                            <div class="countDown_digit_new_rotated_inner" data-value="days">
+                                {{days}}
+                            </div>
+                        </div>
+  </div>
+            </div>
           <span class="label">Days</span>
         </div>
       
         <div class="field">
-          <span class="value" data-value="hours">{{hours}}</span>
+           <div class="countDown_digit_cont countDown_digit_cont_0">
+ <div class="secs countDown_digit_last_placeholder">
+                        <div class="countDown_digit_last_placeholder_inner" data-value="hours">
+                            {{hours}}
+                        </div>
+  </div>
+  <div class="countDown_digit_new_placeholder" data-value="hours">{{hours}}</div>
+  <div class="countDown_digit_last_rotate" data-value="hours">{{hours}}</div>
+  <div class="countDown_digit_new_rotate" data-value="rotate">
+                        <div class="countDown_digit_new_rotated">
+                            <div class="countDown_digit_new_rotated_inner" data-value="hours">
+                                {{hours}}
+                            </div>
+                        </div>
+  </div>
+            </div>
           <span class="label">Hours</span>
         </div>
       
         <div class="field">
-          <span class="value" data-value="mins">{{minutes}}</span>
+          <div class="countDown_digit_cont countDown_digit_cont_0">
+ <div class="secs countDown_digit_last_placeholder">
+                        <div class="countDown_digit_last_placeholder_inner" data-value="minute">
+                            {{minute}}
+                        </div>
+  </div>
+  <div class="countDown_digit_new_placeholder" data-value="mins">{{minute}}</div>
+  <div class="countDown_digit_last_rotate" data-value="mins">{{minute}}</div>
+  <div class="countDown_digit_new_rotate" data-value="rotate">
+                        <div class="countDown_digit_new_rotated">
+                            <div class="countDown_digit_new_rotated_inner" data-value="mins">
+                                {{minute}}
+                            </div>
+                        </div>
+  </div>
+</div>
           <span class="label">Minutes</span>
         </div>
       
         <div class="field">
-          <span class="value" data-value="secs">{{seconds}}</span>
+
+          <div class="countDown_digit_cont countDown_digit_cont_0">
+ <div class="secs countDown_digit_last_placeholder">
+                        <div class="countDown_digit_last_placeholder_inner" data-value="secs">
+                            {{seconds}}
+                        </div>
+  </div>
+  <div class="countDown_digit_new_placeholder" data-value="secs">{{seconds}}</div>
+  <div class="countDown_digit_last_rotate" data-value="secs">{{seconds}}</div>
+  <div class="countDown_digit_new_rotate" data-value="rotate">
+                        <div class="countDown_digit_new_rotated">
+                            <div class="countDown_digit_new_rotated_inner" data-value="secs">
+                                {{seconds}}
+                            </div>
+                        </div>
+  </div>
+</div>
           <span class="label">Seconds</span>
         </div>
+
+
       </div>

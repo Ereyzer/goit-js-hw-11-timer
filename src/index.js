@@ -9,6 +9,16 @@ const timerOne = new CountdownTimer({
     presentationName: 'до нового року залишилось',
   });
 
-  timerOne.renderHtml();
+  timerOne.renderHtmlTimer();
+
+const timerTwo = new CountdownTimer({
+    parentSelector: '.container',
+    selector: 'timer-2',
+    targetDate: new Date('July 07, 2021'),
+    presentationName: 'до свята ІВАНА КУПАЛА',
+});
+
+
+    timerTwo.renderHtmlTimer();
 
 
