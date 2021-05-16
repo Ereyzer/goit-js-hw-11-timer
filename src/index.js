@@ -1,5 +1,7 @@
 import './styles.css';
-import CountdownTimer from './plugin-timer/js/timer-plugin'
+import CountdownTimer from './plugin-timer/js/timer-plugin';
+
+
 
 
 const timerOne = new CountdownTimer({
@@ -9,7 +11,8 @@ const timerOne = new CountdownTimer({
     presentationName: 'до нового року залишилось',
   });
 
-  timerOne.renderHtmlTimer();
+ timerOne.renderHtmlTimer();
+  
 
 const timerTwo = new CountdownTimer({
     parentSelector: '.container',

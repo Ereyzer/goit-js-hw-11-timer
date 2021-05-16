@@ -10,7 +10,7 @@ export default class CountdownTimer {
         this.days = 0;
         this.hours = 0;
         this.minutes = 0;
-        this.seconds = 55;
+        this.seconds = 0;
         this.reference ={
             parent: document.querySelector(parentSelector),
 
@@ -36,9 +36,9 @@ export default class CountdownTimer {
         return new Date();
     }
     timerWrithe() {
-        // this.reference.rotate.classList.remove('countDown_digit_new_rotate');
-
-        this.reference.rotate.forEach(el => el.classList.toggle('countDown_digit_new_rotate'));
+        // this.reference.rotate.forEach(el => el.classList.toggle('countDown_digit_new_rotate'));
+        
+        
         this.addSomeTime.call(this);
         this.reference.secs.forEach(el => el.textContent = this.dateSecondsTimer.call(this));
         this.reference.minute.forEach(el => el.textContent = this.dateMinutesTimer.call(this));

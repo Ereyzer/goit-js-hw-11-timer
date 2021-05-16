@@ -12,6 +12,7 @@
         background-color: white;
         display: flex;
         flex-direction: column;
+        justify-content: center;
         width: 12vw;
         height: 45vh;
         
@@ -28,7 +29,9 @@
        height: 25vh;
       font-size: 20vh;
 
-
+    }
+    .label{
+        color: blue;
     }
 
 
@@ -72,7 +75,7 @@
   .countDown_digit_cont {
     perspective: 3.2em;
     box-shadow: 0.1em 0.1em 0.1em rgba(0, 0, 0, 0.2);
-    width: 1em;
+    width: 2em;
     height: 1.6em;
     position: relative;
     line-height: 1.6em;
