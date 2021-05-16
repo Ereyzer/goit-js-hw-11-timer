@@ -36,7 +36,7 @@ export default class CountdownTimer {
         return new Date();
     }
     timerWrithe() {
-        // this.reference.rotate.forEach(el => el.classList.toggle('countDown_digit_new_rotate'));
+        //*this.reference.rotate.forEach(el => el.classList.toggle('countDown_digit_new_rotate'));
         
         
         this.addSomeTime.call(this);
