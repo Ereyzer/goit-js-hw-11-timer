@@ -13,6 +13,7 @@ const timerOne = new CountdownTimer({
 
  timerOne.renderHtmlTimer();
   
+//  console.log(timerOne);
 
 const timerTwo = new CountdownTimer({
     parentSelector: '.container',
@@ -23,5 +24,28 @@ const timerTwo = new CountdownTimer({
 
 
     timerTwo.renderHtmlTimer();
+// console.log(timerTwo);
 
+// const obj = {
 
+//     a: 1,
+//     b:2,
+// }
+
+// function name(params) {
+//     this.b = params;
+//     return;
+// }
+
+// const calF = name.call(obj, 3);
+
+// console.log(calF)
+// console.log(obj);
+
+// // calF(3);
+// // calF(4);
+// const bindF = name.bind(obj);
+// bindF(7)
+// console.log(obj)
+// bindF(9)
+// console.log(obj)
